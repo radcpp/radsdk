@@ -161,6 +161,7 @@
     <ClInclude Include="Common\File.h" />
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
+    <ClInclude Include="Common\Numerics.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
   </ItemGroup>
