@@ -23,6 +23,12 @@
     <ClInclude Include="Common\SmallVector.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Common\Containers.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\ArrayRef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

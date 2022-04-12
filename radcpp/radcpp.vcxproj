@@ -151,7 +151,9 @@
     <ClCompile Include="Common\String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common\ArrayRef.h" />
     <ClInclude Include="Common\Common.h" />
+    <ClInclude Include="Common\Containers.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
   </ItemGroup>
