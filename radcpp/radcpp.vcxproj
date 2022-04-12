@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Common.h" />
+    <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
   </ItemGroup>
   <ItemGroup>
