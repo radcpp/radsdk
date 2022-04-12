@@ -47,6 +47,9 @@
     <ClInclude Include="Common\Math.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Common\Exception.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

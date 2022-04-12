@@ -157,6 +157,7 @@
     <ClInclude Include="Common\ArrayRef.h" />
     <ClInclude Include="Common\Common.h" />
     <ClInclude Include="Common\Containers.h" />
+    <ClInclude Include="Common\Exception.h" />
     <ClInclude Include="Common\File.h" />
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
