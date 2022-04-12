@@ -148,9 +148,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Common\Common.cpp" />
+    <ClCompile Include="Common\String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Common.h" />
+    <ClInclude Include="Common\String.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
