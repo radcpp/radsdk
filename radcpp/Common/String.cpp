@@ -56,9 +56,9 @@ int StrFormatInPlace(std::string& buffer, const char* format, ...)
     charsPrinted = vsnprintf(buffer.data(), buffer.size(), format, args);
     va_end(args);
 
-    if ((charsPrinted > 0) && (charsPrinted + 1 > buffer.size()))
+    if ((charsPrinted > 0) && (size_t(charsPrinted) + 1 > buffer.size()))
     {
-        buffer.resize(charsPrinted + 1);
+        buffer.resize(size_t(charsPrinted) + 1);
         va_start(args, format);
         charsPrinted = vsnprintf(buffer.data(), buffer.size(), format, args);
         va_end(args);
@@ -75,9 +75,9 @@ int StrFormatInPlaceArgList(std::string& buffer, const char* format, va_list arg
     charsPrinted = vsnprintf(buffer.data(), buffer.size(), format, args);
     va_end(args1);
 
-    if ((charsPrinted > 0) && (charsPrinted + 1 > buffer.size()))
+    if ((charsPrinted > 0) && (size_t(charsPrinted) + 1 > buffer.size()))
     {
-        buffer.resize(charsPrinted + 1);
+        buffer.resize(size_t(charsPrinted) + 1);
         va_copy(args1, args);
         charsPrinted = vsnprintf(buffer.data(), buffer.size(), format, args);
         va_end(args1);
