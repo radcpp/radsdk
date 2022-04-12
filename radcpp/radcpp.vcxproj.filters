@@ -21,6 +21,9 @@
     <ClCompile Include="Common\Math.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Common\JsonDoc.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Common.h">
@@ -51,6 +54,9 @@
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="Common\Numerics.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\JsonDoc.h">
       <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>

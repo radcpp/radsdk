@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="Common\File.cpp" />
+    <ClCompile Include="Common\JsonDoc.cpp" />
     <ClCompile Include="Common\Log.cpp" />
     <ClCompile Include="Common\Math.cpp" />
     <ClCompile Include="Common\String.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Common\Containers.h" />
     <ClInclude Include="Common\Exception.h" />
     <ClInclude Include="Common\File.h" />
+    <ClInclude Include="Common\JsonDoc.h" />
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
     <ClInclude Include="Common\Numerics.h" />
