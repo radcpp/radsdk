@@ -163,6 +163,7 @@
     <ClInclude Include="Common\JsonDoc.h" />
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
+    <ClInclude Include="Common\Memory.h" />
     <ClInclude Include="Common\Numerics.h" />
     <ClInclude Include="Common\Parallel.h" />
     <ClInclude Include="Common\SmallVector.h" />

@@ -62,6 +62,9 @@
     <ClInclude Include="Common\Parallel.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Common\Memory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
