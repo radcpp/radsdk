@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FA7500E0-86AE-4F7F-9F13-90FA583E24D9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld", "samples\HelloWorld\HelloWorld.vcxproj", "{E17A3FF6-8FD2-40C1-9F31-28F93C162401}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B190F0F-6CF5-4528-9318-42A88EFB95B9} = {0B190F0F-6CF5-4528-9318-42A88EFB95B9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
