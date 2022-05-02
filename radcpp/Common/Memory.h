@@ -173,6 +173,11 @@ public:
         std::swap(m_ptr, rhs.m_ptr);
     }
 
+    explicit operator bool() const noexcept
+    {
+        return get() != nullptr;
+    }
+
 private:
     T* m_ptr;
 };
