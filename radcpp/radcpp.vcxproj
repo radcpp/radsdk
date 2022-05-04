@@ -154,6 +154,7 @@
     <ClCompile Include="Common\Log.cpp" />
     <ClCompile Include="Common\Math.cpp" />
     <ClCompile Include="Common\String.cpp" />
+    <ClCompile Include="VulkanCore\VulkanCommon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Common\Parallel.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
+    <ClInclude Include="VulkanCore\VulkanCommon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

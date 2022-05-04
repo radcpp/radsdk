@@ -4,6 +4,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{1058f189-4d19-42dc-97cc-aacf46bf6dcf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="VulkanCore">
+      <UniqueIdentifier>{a177706d-d28c-4218-a36f-15526bfbc70b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\Common.cpp">
@@ -26,6 +29,9 @@
     </ClCompile>
     <ClCompile Include="Common\Application.cpp">
       <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanCore\VulkanCommon.cpp">
+      <Filter>VulkanCore</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="Common\Application.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanCore\VulkanCommon.h">
+      <Filter>VulkanCore</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
