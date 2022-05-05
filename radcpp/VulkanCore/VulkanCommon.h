@@ -51,4 +51,76 @@ void ReportVulkanError(VkResult result, const char* function, const char* file, 
 
 std::string GetVulkanVersionString(uint32_t versionNumber);
 
+class VulkanFormat
+{
+public:
+    VulkanFormat(VkFormat format) :
+        m_format(format)
+    {
+    }
+    ~VulkanFormat()
+    {
+    }
+
+    operator VkFormat() const { return m_format; }
+
+    // Numeric
+    // Formats with more then one numeric type (VK_FORMAT_D16_UNORM_S8_UINT) will return false
+    bool IsUNORM() const;
+    bool IsSNORM() const;
+    bool IsUSCALED() const;
+    bool IsSSCALED() const;
+    bool IsUINT() const;
+    bool IsSINT() const;
+    bool IsSRGB() const;
+    bool IsSFLOAT() const;
+    bool IsUFLOAT() const;
+
+    // Types from "Interpretation of Numeric Format" table (OpTypeFloat vs OpTypeInt)
+    bool IsSampledInt() const;
+    bool IsSampledFloat() const;
+
+    bool IsCompressed_ASTC_HDR() const;
+    bool IsCompressed_ASTC_LDR() const;
+    bool IsCompressed_BC() const;
+    bool IsCompressed_EAC() const;
+    bool IsCompressed_ETC2() const;
+    bool IsCompressed_PVRTC() const;
+    bool IsCompressed() const;
+
+    VkImageAspectFlags GetAspectFlags() const;
+    bool IsDepthStencil() const;
+    bool IsDepthOnly() const;
+    bool IsStencilOnly() const;
+    bool HasDepth() const;
+    bool HasStencil() const;
+    uint32_t GetDepthSizeInBits() const;
+    uint32_t GetStencilSizeInBits() const;
+
+    bool IsPacked() const;
+
+    bool RequiresYcbcrConversion() const;
+    bool IsXChromaSubsampled() const;
+    bool IsYChromaSubsampled() const;
+
+    bool IsSinglePlane_422() const;
+    uint32_t GetPlaneCount() const;
+    bool IsIsMultiplane() const;
+    VkFormat GetMultiplaneCompatibleFormat(VkImageAspectFlags plane_aspect) const;
+    VkExtent2D GetMultiplaneExtentDivisors(VkImageAspectFlags plane_aspect) const;
+
+    size_t GetComponentCount() const;
+    VkExtent3D GetTexelBlockExtent() const;
+    size_t GetElementSizeInBytes(VkImageAspectFlags aspectMask = VK_IMAGE_ASPECT_COLOR_BIT) const;
+    double GetTexelSizeInBytes(VkImageAspectFlags aspectMask = VK_IMAGE_ASPECT_COLOR_BIT) const;
+
+    bool IsUndefined() const;
+    bool IsBlockedImage() const;
+    bool IsColor() const;
+
+private:
+    VkFormat m_format;
+
+}; // class VulkanFormat
+
 #endif // VULKAN_COMMON_H
