@@ -8,36 +8,58 @@
 #include <boost/align/aligned_allocator.hpp>
 #include <boost/smart_ptr.hpp>
 
-template<class T>
-class RefCounted
+namespace adl
 {
-protected:
-    RefCounted()
-    {
-    }
-    ~RefCounted()
-    {
-    }
-    size_t GetUseCount()
-    {
-        return m_count;
-    }
-private:
-    mutable std::atomic<size_t> m_count{ 0 };
+    template<typename T>
+    class RefCounted;
 
-    friend void AddRef(const T* ptr)
+    template<typename T>
+    void AddRef(const RefCounted<T>* p);
+    template<typename T>
+    void DecRef(const RefCounted<T>* p);
+
+    template<class T>
+    class RefCounted
     {
-        ptr->m_count.fetch_add(1, std::memory_order_relaxed);
+    protected:
+        RefCounted()
+        {
+        }
+
+        ~RefCounted()
+        {
+        }
+
+        size_t GetUseCount() const noexcept
+        {
+            return m_count;
+        }
+
+    private:
+        mutable std::atomic<size_t> m_count;
+
+        friend void AddRef<T>(const RefCounted<T>* p);
+        friend void DecRef<T>(const RefCounted<T>* p);
+    };
+
+    template<class T>
+    inline void AddRef(const RefCounted<T>* p)
+    {
+        p->m_count.fetch_add(1, std::memory_order_relaxed);
     }
-    friend void Release(const T* ptr)
+
+    template<class T>
+    inline void DecRef(const RefCounted<T>* p)
     {
-        if (ptr->m_count.fetch_sub(1, std::memory_order_release) == 1)
+        if (p->m_count.fetch_sub(1, std::memory_order_release) == 1)
         {
             std::atomic_thread_fence(std::memory_order_acquire);
-            delete ptr;
+            delete static_cast<const T*>(p);
         }
     }
-};
+} // namespace adl
+
+using adl::RefCounted;
 
 template<class T>
 class Ref
@@ -76,7 +98,7 @@ public:
     {
         if (m_ptr)
         {
-            Release(m_ptr);
+            DecRef(m_ptr);
         }
     }
 
@@ -286,9 +308,9 @@ template<class T, class U> Ref<T> dynamic_pointer_cast(Ref<U>&& p) noexcept
 
 template<class T> struct std::hash<Ref<T>>
 {
-    std::size_t operator()(Ref<T> const& ptr) const
+    std::size_t operator()(Ref<T> const& p) const
     {
-        return std::hash<T*>()(ptr.get());
+        return std::hash<T*>()(p.get());
     }
 };
 
