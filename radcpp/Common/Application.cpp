@@ -464,3 +464,25 @@ void Window::OnClose()
     m_shouldClose = true;
     Destroy();
 }
+
+std::string GetEnv(std::string_view varName)
+{
+    std::string var;
+#ifdef _WIN32
+    std::wstring varNameWide = StrU8ToWide(varName);
+    wchar_t* pBuffer = nullptr;
+    size_t bufferSize = 0;
+    errno_t err = _wdupenv_s(&pBuffer, &bufferSize, varNameWide.data());
+    if (err == 0)
+    {
+        if (pBuffer)
+        {
+            var = StrWideToU8(pBuffer);
+            free(pBuffer);
+        }
+    }
+#else
+    var = std::getenv(varName.data());
+#endif
+    return var;
+}

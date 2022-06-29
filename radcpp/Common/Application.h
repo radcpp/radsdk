@@ -138,4 +138,6 @@ protected:
 
 extern Application* g_app;
 
+std::string GetEnv(std::string_view varName);
+
 #endif // RADCPP_APPLICATION_H
