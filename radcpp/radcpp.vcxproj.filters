@@ -4,8 +4,14 @@
     <Filter Include="Common">
       <UniqueIdentifier>{1058f189-4d19-42dc-97cc-aacf46bf6dcf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="VulkanCore">
-      <UniqueIdentifier>{a177706d-d28c-4218-a36f-15526bfbc70b}</UniqueIdentifier>
+    <Filter Include="VulkanEngine">
+      <UniqueIdentifier>{8d6eef33-af3c-4f54-b041-3ede4981babe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VulkanEngine\VulkanCore">
+      <UniqueIdentifier>{789cb3ec-97e8-48e4-bf8c-5b7781857672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VulkanEngine\Shaders">
+      <UniqueIdentifier>{8c5da6bf-dd12-4f91-b023-0c6b36fb727f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,8 +36,80 @@
     <ClCompile Include="Common\Application.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="VulkanCore\VulkanCommon.cpp">
-      <Filter>VulkanCore</Filter>
+    <ClCompile Include="Common\Geometry.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanBuffer.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommandBuffer.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommandPool.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommon.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDescriptorPool.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDescriptorSet.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDevice.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanEvent.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanFence.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanFramebuffer.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanImage.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanInstance.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanPhysicalDevice.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanPipeline.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanQueue.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanRenderPass.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSampler.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSemaphore.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanShader.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSwapchain.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanWindow.cpp">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanScene.cpp">
+      <Filter>VulkanEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanRenderer.cpp">
+      <Filter>VulkanEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanCamera.cpp">
+      <Filter>VulkanEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,11 +155,95 @@
     <ClInclude Include="Common\Application.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="VulkanCore\VulkanCommon.h">
-      <Filter>VulkanCore</Filter>
+    <ClInclude Include="Common\Geometry.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanBuffer.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommandBuffer.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommandPool.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommon.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDescriptorPool.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDescriptorSet.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDevice.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanEvent.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanFence.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanFramebuffer.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanImage.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanInstance.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanPhysicalDevice.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanPipeline.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanQueue.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanRenderPass.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSampler.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSemaphore.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanShader.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSwapchain.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanWindow.h">
+      <Filter>VulkanEngine\VulkanCore</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCore.h">
+      <Filter>VulkanEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanScene.h">
+      <Filter>VulkanEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanRenderer.h">
+      <Filter>VulkanEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCamera.h">
+      <Filter>VulkanEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\Shaders\Render.h">
+      <Filter>VulkanEngine\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="VulkanEngine\Shaders\SolidWireframe.frag">
+      <Filter>VulkanEngine\Shaders</Filter>
+    </None>
+    <None Include="VulkanEngine\Shaders\SolidWireframe.vert">
+      <Filter>VulkanEngine\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

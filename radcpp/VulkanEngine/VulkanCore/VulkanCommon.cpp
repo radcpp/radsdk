@@ -1,4 +1,5 @@
-#include "radcpp/VulkanCore/VulkanCommon.h"
+#include "VulkanCommon.h"
+#include "radcpp/VulkanEngine/VulkanCore.h"
 
 #define VOLK_IMPLEMENTATION
 #include "volk.h"
@@ -22,6 +23,12 @@ std::string GetVulkanVersionString(uint32_t versionNumber)
         VK_VERSION_MAJOR(versionNumber),
         VK_VERSION_MINOR(versionNumber),
         VK_VERSION_PATCH(versionNumber));
+}
+
+uint32_t CalcMaxMipLevel(uint32_t width, uint32_t height, uint32_t depth)
+{
+    uint32_t maxExtent = std::max(std::max(width, height), depth);
+    return static_cast<uint32_t>(std::floor(std::log2(maxExtent))) + 1;
 }
 
 bool VulkanFormat::IsUNORM() const
@@ -212,7 +219,7 @@ VkExtent2D VulkanFormat::GetMultiplaneExtentDivisors(VkImageAspectFlags plane_as
     return FindMultiplaneExtentDivisors(m_format, plane_aspect);
 }
 
-size_t VulkanFormat::GetComponentCount() const
+uint32_t VulkanFormat::GetComponentCount() const
 {
     return FormatComponentCount(m_format);
 }
@@ -222,7 +229,7 @@ VkExtent3D VulkanFormat::GetTexelBlockExtent() const
     return FormatTexelBlockExtent(m_format);
 }
 
-size_t VulkanFormat::GetElementSizeInBytes(VkImageAspectFlags aspectMask) const
+uint32_t VulkanFormat::GetElementSizeInBytes(VkImageAspectFlags aspectMask) const
 {
     return FormatElementSize(m_format, aspectMask);
 }
@@ -245,4 +252,23 @@ bool VulkanFormat::IsBlockedImage() const
 bool VulkanFormat::IsColor() const
 {
     return FormatIsColor(m_format);
+}
+
+VulkanGraphicsPipelineCreateInfo::VulkanGraphicsPipelineCreateInfo()
+{
+    VkStencilOpState stencilOpState = {};
+    stencilOpState.failOp = VK_STENCIL_OP_KEEP;
+    stencilOpState.passOp = VK_STENCIL_OP_KEEP;
+    stencilOpState.depthFailOp;
+    stencilOpState.compareOp = VK_COMPARE_OP_ALWAYS;
+    stencilOpState.compareMask;
+    stencilOpState.writeMask;
+    stencilOpState.reference;
+
+    m_depthStencilState.front = stencilOpState;
+    m_depthStencilState.back = stencilOpState;
+}
+
+VulkanGraphicsPipelineCreateInfo::~VulkanGraphicsPipelineCreateInfo()
+{
 }

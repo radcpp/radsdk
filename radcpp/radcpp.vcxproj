@@ -150,11 +150,35 @@
     <ClCompile Include="Common\Application.cpp" />
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="Common\File.cpp" />
+    <ClCompile Include="Common\Geometry.cpp" />
     <ClCompile Include="Common\JsonDoc.cpp" />
     <ClCompile Include="Common\Log.cpp" />
     <ClCompile Include="Common\Math.cpp" />
     <ClCompile Include="Common\String.cpp" />
-    <ClCompile Include="VulkanCore\VulkanCommon.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCamera.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanBuffer.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommandBuffer.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommandPool.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommon.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDescriptorPool.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDescriptorSet.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanDevice.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanEvent.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanFence.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanFramebuffer.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanImage.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanInstance.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanPhysicalDevice.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanPipeline.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanQueue.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanRenderPass.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSampler.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSemaphore.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanShader.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanSwapchain.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanCore\VulkanWindow.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanRenderer.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -163,6 +187,7 @@
     <ClInclude Include="Common\Containers.h" />
     <ClInclude Include="Common\Exception.h" />
     <ClInclude Include="Common\File.h" />
+    <ClInclude Include="Common\Geometry.h" />
     <ClInclude Include="Common\JsonDoc.h" />
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
@@ -171,10 +196,52 @@
     <ClInclude Include="Common\Parallel.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
-    <ClInclude Include="VulkanCore\VulkanCommon.h" />
+    <ClInclude Include="VulkanEngine\Shaders\Render.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanCamera.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanBuffer.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommandBuffer.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommandPool.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanCommon.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDescriptorPool.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDescriptorSet.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanDevice.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanEvent.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanFence.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanFramebuffer.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanImage.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanInstance.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanPhysicalDevice.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanPipeline.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanQueue.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanRenderPass.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSampler.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSemaphore.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanShader.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanSwapchain.h" />
+    <ClInclude Include="VulkanEngine\VulkanCore\VulkanWindow.h" />
+    <ClInclude Include="VulkanEngine\VulkanRenderer.h" />
+    <ClInclude Include="VulkanEngine\VulkanScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="VulkanEngine\Shaders\SolidWireframe.frag">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="VulkanEngine\Shaders\SolidWireframe.vert">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
