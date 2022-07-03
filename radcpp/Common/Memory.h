@@ -316,7 +316,7 @@ template<class T> struct std::hash<Ref<T>>
 
 
 template <class T, class... Types>
-Ref<T> MakeRef(Types&&... args)
+Ref<T> MakeRefCounted(Types&&... args)
 {
     return Ref<T>(new T(std::forward<Types>(args)...));
 }
