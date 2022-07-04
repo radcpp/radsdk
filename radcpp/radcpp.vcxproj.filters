@@ -236,6 +236,9 @@
     <ClInclude Include="VulkanEngine\Shaders\Render.h">
       <Filter>VulkanEngine\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="VulkanEngine\Shaders\Hash.h">
+      <Filter>VulkanEngine\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -196,6 +196,7 @@
     <ClInclude Include="Common\Parallel.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
+    <ClInclude Include="VulkanEngine\Shaders\Hash.h" />
     <ClInclude Include="VulkanEngine\Shaders\Render.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
