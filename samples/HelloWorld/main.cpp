@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
     HelloWorld helloVulkan(instance);
     helloVulkan.Create("Hello, World!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        1600, 900, 0);
+        1600, 900, SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
     helloVulkan.Init();
 
     return app.Run();

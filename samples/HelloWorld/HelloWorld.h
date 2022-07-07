@@ -4,6 +4,7 @@
 
 #include "radcpp/VulkanEngine/VulkanRenderer.h"
 #include "CameraController.h"
+#include "VulkanUi.h"
 
 class HelloWorld : public VulkanWindow
 {
@@ -16,11 +17,13 @@ public:
     VulkanRenderer* GetRenderer() const { return m_renderer.get(); }
 
 protected:
+    virtual bool OnEvent(const SDL_Event& event) override;
+
     virtual void OnShown() {}
     virtual void OnHidden() {}
     virtual void OnExposed() {}
     virtual void OnMoved(int x, int y) {}
-    virtual void OnResized(int width, int height);
+    virtual void OnResized(int width, int height) override;
     virtual void OnMinimized() {}
     virtual void OnMaximized() {}
     virtual void OnRestored() {}
@@ -49,8 +52,12 @@ private:
     Ref<VulkanRenderer> m_renderer;
     Ref<CameraController> m_cameraController;
 
+    Ref<VulkanUi> m_ui;
+
     std::vector<VkViewport> m_viewports;
     std::vector<VkRect2D> m_scissors;
+
+    bool m_showDemoWindow = true;
 
 }; // class HelloWorld
 

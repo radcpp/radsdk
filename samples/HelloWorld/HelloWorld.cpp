@@ -46,6 +46,7 @@ bool HelloWorld::Init()
         }
 
         m_renderer = MakeRefCounted<VulkanRenderer>(m_device, this);
+        m_ui = MakeRefCounted<VulkanUi>(this);
         return true;
     }
     else
@@ -53,6 +54,14 @@ bool HelloWorld::Init()
         LogPrint("HelloWorld", LogLevel::Info, "No GPU supports the window surface!");
         return false;
     }
+}
+
+bool HelloWorld::OnEvent(const SDL_Event& event)
+{
+    m_ui->OnEvent(event);
+
+    // Continue to process the event
+    return false;
 }
 
 void HelloWorld::OnRender()
@@ -65,7 +74,13 @@ void HelloWorld::OnRender()
     float deltaTime = std::chrono::duration<float>(currTime - lastTime).count();
     lastTime = currTime;
 
-    if (m_renderer && m_cameraController)
+    m_ui->BeginFrame();
+    if (m_showDemoWindow)
+    {
+        ImGui::ShowDemoWindow(&m_showDemoWindow);
+    }
+
+    if (m_cameraController)
     {
         int windowWidth = 0;
         int windowHeight = 0;
@@ -80,8 +95,11 @@ void HelloWorld::OnRender()
     clearValues[1].depthStencil = { 1.0, 0 };
     cmdBuffer->BeginRenderPass(m_defaultRenderPass.get(), m_defaultFramebuffers[m_swapchainImageIndex].get(), clearValues);
     m_renderer->Render(deltaTime);
+    m_ui->Render(cmdBuffer);
     cmdBuffer->EndRenderPass();
     cmdBuffer->End();
+
+    m_ui->EndFrame();
     EndFrame();
 }
 
@@ -107,6 +125,11 @@ void HelloWorld::OnResized(int width, int height)
         m_renderer->Resize(width, height);
         m_renderer->SetViewports(m_viewports);
         m_renderer->SetScissors(m_scissors);
+    }
+
+    if (m_ui)
+    {
+        m_ui->OnResize(width, height);
     }
 }
 

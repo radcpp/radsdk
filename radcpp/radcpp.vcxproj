@@ -147,6 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\3rdparty\include\imgui\imgui.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_impl_sdl.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\implot.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\implot_demo.cpp" />
+    <ClCompile Include="..\3rdparty\include\imgui\implot_items.cpp" />
     <ClCompile Include="Common\Application.cpp" />
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="Common\File.cpp" />
@@ -181,6 +191,16 @@
     <ClCompile Include="VulkanEngine\VulkanScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\3rdparty\include\imgui\imconfig.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imgui.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imgui_impl_sdl.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imgui_impl_vulkan.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imgui_internal.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\implot.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\implot_internal.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\3rdparty\include\imgui\imstb_truetype.h" />
     <ClInclude Include="Common\Application.h" />
     <ClInclude Include="Common\ArrayRef.h" />
     <ClInclude Include="Common\Common.h" />
@@ -243,6 +263,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\3rdparty\include\imgui\LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

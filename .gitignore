@@ -393,3 +393,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+## radsdk temporary files
+
+# samples
+samples/HelloWorld/imgui.ini
