@@ -25,5 +25,20 @@
     <ClCompile Include="concurrency\sharedfuture1.cpp">
       <Filter>Source Files\concurrency</Filter>
     </ClCompile>
+    <ClCompile Include="concurrency\thread1.cpp">
+      <Filter>Source Files\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\promise1.cpp">
+      <Filter>Source Files\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\mutex1.cpp">
+      <Filter>Source Files\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\condvar1.cpp">
+      <Filter>Source Files\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\condvar2.cpp">
+      <Filter>Source Files\concurrency</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

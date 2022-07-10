@@ -142,7 +142,12 @@
     <ClCompile Include="concurrency\async1.cpp" />
     <ClCompile Include="concurrency\async2.cpp" />
     <ClCompile Include="concurrency\async3.cpp" />
+    <ClCompile Include="concurrency\condvar1.cpp" />
+    <ClCompile Include="concurrency\condvar2.cpp" />
+    <ClCompile Include="concurrency\mutex1.cpp" />
+    <ClCompile Include="concurrency\promise1.cpp" />
     <ClCompile Include="concurrency\sharedfuture1.cpp" />
+    <ClCompile Include="concurrency\thread1.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
