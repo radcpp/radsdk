@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="concurrency\async1.cpp" />
+    <ClCompile Include="concurrency\async2.cpp" />
+    <ClCompile Include="concurrency\async3.cpp" />
+    <ClCompile Include="concurrency\atomics1.cpp" />
+    <ClCompile Include="concurrency\condvar1.cpp" />
+    <ClCompile Include="concurrency\condvar2.cpp" />
+    <ClCompile Include="concurrency\mutex1.cpp" />
+    <ClCompile Include="concurrency\promise1.cpp" />
+    <ClCompile Include="concurrency\sharedfuture1.cpp" />
+    <ClCompile Include="concurrency\thread1.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,18 +151,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="concurrency\async1.cpp" />
-    <ClCompile Include="concurrency\async2.cpp" />
-    <ClCompile Include="concurrency\async3.cpp" />
-    <ClCompile Include="concurrency\condvar1.cpp" />
-    <ClCompile Include="concurrency\condvar2.cpp" />
-    <ClCompile Include="concurrency\mutex1.cpp" />
-    <ClCompile Include="concurrency\promise1.cpp" />
-    <ClCompile Include="concurrency\sharedfuture1.cpp" />
-    <ClCompile Include="concurrency\thread1.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

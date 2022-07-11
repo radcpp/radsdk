@@ -16,6 +16,8 @@ int sample_mutex1();
 int sample_condvar1();
 // Using Condition Variables to Implement a Queue for Multiple Threads
 int sample_condvar2();
+// Using Atomics
+int sample_atomics1();
 
 int main()
 {
@@ -28,4 +30,5 @@ int main()
     //return sample_mutex1();
     //return sample_condvar1();
     //return sample_condvar2();
+    //return sample_atomics1();
 }
