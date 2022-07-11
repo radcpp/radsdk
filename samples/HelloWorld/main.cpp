@@ -1,11 +1,17 @@
 #include "radcpp/Common/Common.h"
 #include "radcpp/Common/Log.h"
+#include "radcpp/Common/Process.h"
 
 #include "HelloWorld.h"
 
 int main(int argc, char* argv[])
 {
     Application app(argc, argv);
+
+    for (const QString& env : QProcess::systemEnvironment())
+    {
+        LogPrint("Debug", LogLevel::Info, "Environment: %s", env.toStdString().c_str());
+    }
 
     bool enableValidationLayer = true;
 

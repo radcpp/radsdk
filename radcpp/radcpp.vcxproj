@@ -214,6 +214,7 @@
     <ClInclude Include="Common\Memory.h" />
     <ClInclude Include="Common\Numerics.h" />
     <ClInclude Include="Common\Parallel.h" />
+    <ClInclude Include="Common\Process.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
     <ClInclude Include="VulkanEngine\Shaders\Hash.h" />

@@ -302,6 +302,9 @@
     <ClInclude Include="..\3rdparty\include\imgui\imstb_truetype.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Common\Process.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -57,7 +57,6 @@
 #include "QtCore/qlist.h"
 #include "QtCore/qobject.h"
 #include "QtCore/qpointer.h"
-#include "QtCore/qreadwritelock.h"
 #include "QtCore/qsharedpointer.h"
 #include "QtCore/qvariant.h"
 #include "QtCore/qproperty.h"
@@ -276,8 +275,10 @@ public:
             if (c)
                 deleteOrphaned(c);
             SignalVector *v = signalVector.loadRelaxed();
-            if (v)
+            if (v) {
+                v->~SignalVector();
                 free(v);
+            }
         }
 
         // must be called on the senders connection data
@@ -308,14 +309,19 @@ public:
             if (vector && vector->allocated > size)
                 return;
             size = (size + 7) & ~7;
-            SignalVector *newVector = reinterpret_cast<SignalVector *>(malloc(sizeof(SignalVector) + (size + 1) * sizeof(ConnectionList)));
+            void *ptr = malloc(sizeof(SignalVector) + (size + 1) * sizeof(ConnectionList));
+            auto newVector = new (ptr) SignalVector;
+
             int start = -1;
             if (vector) {
+                // not (yet) existing trait:
+                //static_assert(std::is_relocatable_v<SignalVector>);
+                //static_assert(std::is_relocatable_v<ConnectionList>);
                 memcpy(newVector, vector, sizeof(SignalVector) + (vector->allocated + 1) * sizeof(ConnectionList));
                 start = vector->count();
             }
             for (int i = start; i < int(size); ++i)
-                newVector->at(i) = ConnectionList();
+                new (&newVector->at(i)) ConnectionList();
             newVector->next = nullptr;
             newVector->allocated = size;
 
