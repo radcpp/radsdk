@@ -76,7 +76,12 @@ VulkanUi::VulkanUi(VulkanWindow* window) :
 void VulkanUi::UploadFonts()
 {
     ImGuiIO& io = ImGui::GetIO();
-    io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\consola.ttf", 16.0f);
+    int displayIndex = SDL_GetWindowDisplayIndex(m_window->GetHandle());
+    float ddpi = 0.0f;
+    float hdpi = 0.0f;
+    float vdpi = 0.0f;
+    SDL_GetDisplayDPI(displayIndex, &ddpi, &hdpi, &vdpi);
+    io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\consola.ttf", hdpi / 72.0f * 12.0f);
     Ref<VulkanCommandBuffer> commandBuffer = m_device->AllocateCommandBufferOneTimeUse();
     commandBuffer->Begin();
     ImGui_ImplVulkan_CreateFontsTexture(commandBuffer->GetHandle());
