@@ -174,13 +174,41 @@ void HelloWorld::OnKeyDown(const SDL_KeyboardEvent& keyDown)
         {
             Path filePath;
             NativeFileDialog fileDialog;
-            fileDialog.Init();
-            if (fileDialog.OpenFileDialog(filePath, { {"3D Model", "gltf"} }) == NativeFileDialog::ResultOkay)
+            if (fileDialog.Init())
             {
-                LogPrint("HelloWorld", LogLevel::Info, "FileDialog: %s", (const char*)filePath.u8string().c_str());
-                m_renderer->Import3DModel(filePath);
+                if (fileDialog.OpenFileDialog(filePath, { {"3D Model", "gltf"} }) == NativeFileDialog::ResultOkay)
+                {
+                    LogPrint("HelloWorld", LogLevel::Info, "FileDialog: %s", (const char*)filePath.u8string().c_str());
+                    m_renderer->Import3DModel(filePath);
+                }
+                //std::vector<Path> paths;
+                //if (fileDialog.OpenFileDialogMultiSelect(paths, { { "C++ Source", "h,hpp,cpp,cc"} }) == NativeFileDialog::ResultOkay)
+                //{
+                //    for (const auto& path : paths)
+                //    {
+                //        LogPrint("HelloWorld", LogLevel::Info, "FileDialogMultiSelect: %s", (const char*)path.u8string().c_str());
+                //    }
+                //}
+                //Path folderSelected;
+                //if (fileDialog.PickFolder(folderSelected) == NativeFileDialog::ResultOkay)
+                //{
+                //    LogPrint("HelloWorld", LogLevel::Info, "PickFolder: %s", (const char*)folderSelected.u8string().c_str());
+                //}
+                fileDialog.Quit();
             }
-            fileDialog.Quit();
+        }
+        else if (keyDown.keysym.sym == SDLK_s)
+        {
+            Path savePath;
+            NativeFileDialog fileDialog;
+            if (fileDialog.Init())
+            {
+                if (fileDialog.SaveFileDialog(savePath, { {"Plain Text", "txt"} }) == NativeFileDialog::ResultOkay)
+                {
+                    LogPrint("HelloWorld", LogLevel::Info, "SaveFileDialog: %s", (const char*)savePath.u8string().c_str());
+                }
+                fileDialog.Quit();
+            }
         }
     }
 
