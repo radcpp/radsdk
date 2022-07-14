@@ -16,6 +16,12 @@
     <Filter Include="imgui">
       <UniqueIdentifier>{bc743ae9-6116-4c3c-ad3e-5f4afa805952}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\nativefiledialog-extended">
+      <UniqueIdentifier>{33927da2-b7ff-458d-ac41-8e6afc11a90a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\nativefiledialog-extended\include">
+      <UniqueIdentifier>{95f0fae4-ed29-48a6-b1f3-cc7ee67219cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\Common.cpp">
@@ -143,6 +149,12 @@
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\implot_items.cpp">
       <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\NativeFileDialog.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\repos\nativefiledialog-extended\src\nfd_win.cpp">
+      <Filter>Common\nativefiledialog-extended</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +316,15 @@
     </ClInclude>
     <ClInclude Include="Common\Process.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\NativeFileDialog.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\repos\nativefiledialog-extended\src\include\nfd.h">
+      <Filter>Common\nativefiledialog-extended\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\repos\nativefiledialog-extended\src\include\nfd.hpp">
+      <Filter>Common\nativefiledialog-extended\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

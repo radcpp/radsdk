@@ -1,4 +1,5 @@
 #include "HelloWorld.h"
+#include "radcpp/Common/NativeFileDialog.h"
 
 HelloWorld::HelloWorld(Ref<VulkanInstance> instance) :
     VulkanWindow(instance)
@@ -164,6 +165,22 @@ void HelloWorld::OnKeyDown(const SDL_KeyboardEvent& keyDown)
                 SDL_GetCurrentDisplayMode(displayIndex, &displayMode);
                 m_cameraController->SetLookSpeed(180.0f / displayMode.w, 90.0f / displayMode.h);
             }
+        }
+    }
+
+    if (keyDown.keysym.mod & KMOD_CTRL)
+    {
+        if (keyDown.keysym.sym == SDLK_o)
+        {
+            Path filePath;
+            NativeFileDialog fileDialog;
+            fileDialog.Init();
+            if (fileDialog.OpenFileDialog(filePath, { {"3D Model", "gltf"} }) == NativeFileDialog::ResultOkay)
+            {
+                LogPrint("HelloWorld", LogLevel::Info, "FileDialog: %s", (const char*)filePath.u8string().c_str());
+                m_renderer->Import3DModel(filePath);
+            }
+            fileDialog.Quit();
         }
     }
 

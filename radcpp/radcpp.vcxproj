@@ -89,7 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;$(SolutionDir)3rdparty\repos\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;$(SolutionDir)3rdparty\repos\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;$(SolutionDir)3rdparty\repos\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,7 +137,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)3rdparty\include\;$(SolutionDir)3rdparty\repos\nativefiledialog-extended\src\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,6 +157,7 @@
     <ClCompile Include="..\3rdparty\include\imgui\implot.cpp" />
     <ClCompile Include="..\3rdparty\include\imgui\implot_demo.cpp" />
     <ClCompile Include="..\3rdparty\include\imgui\implot_items.cpp" />
+    <ClCompile Include="..\3rdparty\repos\nativefiledialog-extended\src\nfd_win.cpp" />
     <ClCompile Include="Common\Application.cpp" />
     <ClCompile Include="Common\Common.cpp" />
     <ClCompile Include="Common\File.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Common\JsonDoc.cpp" />
     <ClCompile Include="Common\Log.cpp" />
     <ClCompile Include="Common\Math.cpp" />
+    <ClCompile Include="Common\NativeFileDialog.cpp" />
     <ClCompile Include="Common\String.cpp" />
     <ClCompile Include="VulkanEngine\VulkanCamera.cpp" />
     <ClCompile Include="VulkanEngine\VulkanCore\VulkanBuffer.cpp" />
@@ -201,6 +203,8 @@
     <ClInclude Include="..\3rdparty\include\imgui\imstb_rectpack.h" />
     <ClInclude Include="..\3rdparty\include\imgui\imstb_textedit.h" />
     <ClInclude Include="..\3rdparty\include\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\3rdparty\repos\nativefiledialog-extended\src\include\nfd.h" />
+    <ClInclude Include="..\3rdparty\repos\nativefiledialog-extended\src\include\nfd.hpp" />
     <ClInclude Include="Common\Application.h" />
     <ClInclude Include="Common\ArrayRef.h" />
     <ClInclude Include="Common\Common.h" />
@@ -212,6 +216,7 @@
     <ClInclude Include="Common\Log.h" />
     <ClInclude Include="Common\Math.h" />
     <ClInclude Include="Common\Memory.h" />
+    <ClInclude Include="Common\NativeFileDialog.h" />
     <ClInclude Include="Common\Numerics.h" />
     <ClInclude Include="Common\Parallel.h" />
     <ClInclude Include="Common\Process.h" />
