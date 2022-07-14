@@ -4,7 +4,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
     <ClCompile Include="CameraController.cpp" />
-    <ClCompile Include="VulkanUi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -13,6 +12,5 @@
     <ClInclude Include="WindowTest.h" />
     <ClInclude Include="HelloWorld.h" />
     <ClInclude Include="CameraController.h" />
-    <ClInclude Include="VulkanUi.h" />
   </ItemGroup>
 </Project>

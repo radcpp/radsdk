@@ -178,7 +178,6 @@ xcopy /y /d /e  "$(SolutionDir)radcpp\VulkanEngine\Shaders\" "$(OutDir)Shaders\"
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="HelloWorld.cpp" />
-    <ClCompile Include="VulkanUi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -186,7 +185,6 @@ xcopy /y /d /e  "$(SolutionDir)radcpp\VulkanEngine\Shaders\" "$(OutDir)Shaders\"
   <ItemGroup>
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="HelloWorld.h" />
-    <ClInclude Include="VulkanUi.h" />
     <ClInclude Include="WindowTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

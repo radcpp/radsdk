@@ -13,14 +13,14 @@
     <Filter Include="VulkanEngine\Shaders">
       <UniqueIdentifier>{8c5da6bf-dd12-4f91-b023-0c6b36fb727f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="imgui">
-      <UniqueIdentifier>{bc743ae9-6116-4c3c-ad3e-5f4afa805952}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common\nativefiledialog-extended">
       <UniqueIdentifier>{33927da2-b7ff-458d-ac41-8e6afc11a90a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\nativefiledialog-extended\include">
       <UniqueIdentifier>{95f0fae4-ed29-48a6-b1f3-cc7ee67219cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VulkanEngine\imgui">
+      <UniqueIdentifier>{bc743ae9-6116-4c3c-ad3e-5f4afa805952}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,40 +121,43 @@
       <Filter>VulkanEngine</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_demo.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_draw.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_impl_sdl.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_impl_vulkan.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_tables.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\imgui_widgets.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\implot.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\implot_demo.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\include\imgui\implot_items.cpp">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClCompile>
     <ClCompile Include="Common\NativeFileDialog.cpp">
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="..\3rdparty\repos\nativefiledialog-extended\src\nfd_win.cpp">
       <Filter>Common\nativefiledialog-extended</Filter>
+    </ClCompile>
+    <ClCompile Include="VulkanEngine\VulkanUi.cpp">
+      <Filter>VulkanEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -285,34 +288,34 @@
       <Filter>VulkanEngine\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imconfig.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imgui.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imgui_impl_sdl.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imgui_impl_vulkan.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imgui_internal.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\implot.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\implot_internal.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imstb_rectpack.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imstb_textedit.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdparty\include\imgui\imstb_truetype.h">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </ClInclude>
     <ClInclude Include="Common\Process.h">
       <Filter>Common</Filter>
@@ -326,6 +329,9 @@
     <ClInclude Include="..\3rdparty\repos\nativefiledialog-extended\src\include\nfd.hpp">
       <Filter>Common\nativefiledialog-extended\include</Filter>
     </ClInclude>
+    <ClInclude Include="VulkanEngine\VulkanUi.h">
+      <Filter>VulkanEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -338,7 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\3rdparty\include\imgui\LICENSE.txt">
-      <Filter>imgui</Filter>
+      <Filter>VulkanEngine\imgui</Filter>
     </Text>
   </ItemGroup>
 </Project>

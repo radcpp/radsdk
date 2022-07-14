@@ -1,7 +1,7 @@
 #ifndef VULKAN_UI_H
 #define VULKAN_UI_H
 
-#include "radcpp/VulkanEngine/VulkanCore.h"
+#include "VulkanCore.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_sdl.h"

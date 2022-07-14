@@ -191,6 +191,7 @@
     <ClCompile Include="VulkanEngine\VulkanCore\VulkanWindow.cpp" />
     <ClCompile Include="VulkanEngine\VulkanRenderer.cpp" />
     <ClCompile Include="VulkanEngine\VulkanScene.cpp" />
+    <ClCompile Include="VulkanEngine\VulkanUi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\3rdparty\include\imgui\imconfig.h" />
@@ -254,6 +255,7 @@
     <ClInclude Include="VulkanEngine\VulkanCore\VulkanWindow.h" />
     <ClInclude Include="VulkanEngine\VulkanRenderer.h" />
     <ClInclude Include="VulkanEngine\VulkanScene.h" />
+    <ClInclude Include="VulkanEngine\VulkanUi.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

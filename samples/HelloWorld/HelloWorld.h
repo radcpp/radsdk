@@ -3,8 +3,8 @@
 #pragma once
 
 #include "radcpp/VulkanEngine/VulkanRenderer.h"
+#include "radcpp/VulkanEngine/VulkanUi.h"
 #include "CameraController.h"
-#include "VulkanUi.h"
 
 class HelloWorld : public VulkanWindow
 {
