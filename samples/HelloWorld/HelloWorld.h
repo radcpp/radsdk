@@ -57,7 +57,22 @@ private:
     std::vector<VkViewport> m_viewports;
     std::vector<VkRect2D> m_scissors;
 
-    bool m_showDemoWindow = true;
+    bool Import3DFile();
+
+    bool m_showMainMenu = true;
+    void ShowMainMenuBar();
+    void ShowMenuFile();
+
+    bool m_showEnvironmentVariableTable = false;
+    void ShowEnvironmentVariableTable();
+    std::atomic<bool> m_environmentVariableQueryReady;
+    struct EnvironmentVariable
+    {
+        std::string name;
+        std::string value;
+    };
+    std::vector<EnvironmentVariable> m_environmentVariables;
+    void QueryEnvironmentVariables();
 
 }; // class HelloWorld
 

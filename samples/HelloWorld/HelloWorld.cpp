@@ -1,5 +1,9 @@
 #include "HelloWorld.h"
 #include "radcpp/Common/NativeFileDialog.h"
+#include "radcpp/Common/Process.h"
+
+#include <future>
+#include <thread>
 
 HelloWorld::HelloWorld(Ref<VulkanInstance> instance) :
     VulkanWindow(instance)
@@ -76,9 +80,13 @@ void HelloWorld::OnRender()
     lastTime = currTime;
 
     m_ui->BeginFrame();
-    if (m_showDemoWindow)
+    if (m_showMainMenu)
     {
-        ImGui::ShowDemoWindow(&m_showDemoWindow);
+        ShowMainMenuBar();
+    }
+    if (m_showEnvironmentVariableTable)
+    {
+        ShowEnvironmentVariableTable();
     }
 
     if (m_cameraController)
@@ -172,43 +180,7 @@ void HelloWorld::OnKeyDown(const SDL_KeyboardEvent& keyDown)
     {
         if (keyDown.keysym.sym == SDLK_o)
         {
-            Path filePath;
-            NativeFileDialog fileDialog;
-            if (fileDialog.Init())
-            {
-                if (fileDialog.OpenFileDialog(filePath, { {"3D Model", "gltf"} }) == NativeFileDialog::ResultOkay)
-                {
-                    LogPrint("HelloWorld", LogLevel::Info, "FileDialog: %s", (const char*)filePath.u8string().c_str());
-                    m_renderer->Import3DModel(filePath);
-                }
-                //std::vector<Path> paths;
-                //if (fileDialog.OpenFileDialogMultiSelect(paths, { { "C++ Source", "h,hpp,cpp,cc"} }) == NativeFileDialog::ResultOkay)
-                //{
-                //    for (const auto& path : paths)
-                //    {
-                //        LogPrint("HelloWorld", LogLevel::Info, "FileDialogMultiSelect: %s", (const char*)path.u8string().c_str());
-                //    }
-                //}
-                //Path folderSelected;
-                //if (fileDialog.PickFolder(folderSelected) == NativeFileDialog::ResultOkay)
-                //{
-                //    LogPrint("HelloWorld", LogLevel::Info, "PickFolder: %s", (const char*)folderSelected.u8string().c_str());
-                //}
-                fileDialog.Quit();
-            }
-        }
-        else if (keyDown.keysym.sym == SDLK_s)
-        {
-            Path savePath;
-            NativeFileDialog fileDialog;
-            if (fileDialog.Init())
-            {
-                if (fileDialog.SaveFileDialog(savePath, { {"Plain Text", "txt"} }) == NativeFileDialog::ResultOkay)
-                {
-                    LogPrint("HelloWorld", LogLevel::Info, "SaveFileDialog: %s", (const char*)savePath.u8string().c_str());
-                }
-                fileDialog.Quit();
-            }
+            Import3DFile();
         }
     }
 
@@ -232,4 +204,153 @@ void HelloWorld::OnMouseMove(const SDL_MouseMotionEvent& mouseMotion)
     {
         m_cameraController->OnMouseMove(mouseMotion);
     }
+}
+
+bool HelloWorld::Import3DFile()
+{
+    Path filePath;
+    NativeFileDialog fileDialog;
+    if (fileDialog.Init())
+    {
+        if (fileDialog.OpenFileDialog(filePath, { {"3D Model", "gltf"} }) == NativeFileDialog::ResultOkay)
+        {
+            LogPrint("HelloWorld", LogLevel::Info, "FileDialog: %s", (const char*)filePath.u8string().c_str());
+            m_renderer->Import3DModel(filePath);
+        }
+    }
+    fileDialog.Quit();
+    return true;
+}
+
+void HelloWorld::ShowMainMenuBar()
+{
+    if (ImGui::BeginMainMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            ShowMenuFile();
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Edit"))
+        {
+            if (ImGui::MenuItem("Undo", "Ctrl+Z")) {}
+            if (ImGui::MenuItem("Redo", "Ctrl+Y", false, false)) {}  // Disabled item
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cut", "Ctrl+X")) {}
+            if (ImGui::MenuItem("Copy", "Ctrl+C")) {}
+            if (ImGui::MenuItem("Paste", "Ctrl+V")) {}
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("System"))
+        {
+            if (ImGui::MenuItem("Environment Variables..."))
+            {
+                m_showEnvironmentVariableTable = true;
+                m_environmentVariableQueryReady = false;
+                std::thread t(&HelloWorld::QueryEnvironmentVariables, this);
+                t.detach();
+            }
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+}
+
+void HelloWorld::ShowMenuFile()
+{
+    if (ImGui::BeginMenu("New"))
+    {
+        if (ImGui::MenuItem("Project..."))
+        {
+            LogPrint("HelloWorld", LogLevel::Info, "MainMenu->New->Project...");
+        }
+        if (ImGui::MenuItem("File..."))
+        {
+            LogPrint("HelloWorld", LogLevel::Info, "MainMenu->New->File...");
+        }
+        ImGui::EndMenu();
+    }
+    if (ImGui::MenuItem("Open", "Ctrl+O"))
+    {
+        Import3DFile();
+    }
+    ImGui::Separator();
+    if (ImGui::MenuItem("Save", "Ctrl+S"))
+    {
+    }
+    if (ImGui::MenuItem("Save As...", "Ctrl+S"))
+    {
+    }
+    if (ImGui::MenuItem("Save All", "Ctrl+Shift+S"))
+    {
+    }
+    ImGui::Separator();
+
+    if (ImGui::MenuItem("Quit", "Alt+F4"))
+    {
+    }
+}
+
+void HelloWorld::ShowEnvironmentVariableTable()
+{
+    ImGui::SetNextWindowSize(ImVec2(800, 600), ImGuiCond_FirstUseEver);
+    ImGui::Begin("Environment Variables", &m_showEnvironmentVariableTable);
+    if (m_environmentVariableQueryReady)
+    {
+        if (ImGui::BeginTable("Environment Variable Table", 2,
+            ImGuiTableFlags_Resizable | ImGuiTableFlags_RowBg | ImGuiTableFlags_Borders))
+        {
+            ImGui::TableSetupColumn("Name", ImGuiTableColumnFlags_WidthStretch, 0.4f);
+            ImGui::TableSetupColumn("Value", ImGuiTableColumnFlags_WidthStretch);
+            ImGui::TableHeadersRow();
+            for (int row = 0; row < static_cast<int>(m_environmentVariables.size()); row++)
+            {
+                ImGui::TableNextRow();
+                ImGui::TableSetColumnIndex(0);
+                ImGui::Text(m_environmentVariables[row].name.c_str());
+                ImGui::TableSetColumnIndex(1);
+                ImGui::Text(m_environmentVariables[row].value.c_str());
+            }
+            ImGui::EndTable();
+        }
+    }
+    else
+    {
+        ImGui::Text("Querying...");
+    }
+    ImGui::End();
+
+    if (!m_showEnvironmentVariableTable)
+    {
+        m_environmentVariables.clear();
+        m_environmentVariableQueryReady = false;
+    }
+}
+
+void HelloWorld::QueryEnvironmentVariables()
+{
+    auto list = QProcess::systemEnvironment();
+    m_environmentVariables.clear();
+    for (const QString& qstr : list)
+    {
+        std::string str = qstr.toStdString();
+        EnvironmentVariable var;
+        var.name = str.substr(0, str.find_first_of('='));
+        var.value = str.substr(var.name.size() + 1);
+
+        if (var.name == "Path")
+        {
+            auto paths = StrSplit(var.value, ";");
+            var.value.clear();
+            for (const auto& path : paths)
+            {
+                var.value += path;
+                var.value += '\n';
+            }
+            var.value.pop_back();
+        }
+
+        m_environmentVariables.push_back(var);
+    }
+    m_environmentVariableQueryReady = true;
 }
