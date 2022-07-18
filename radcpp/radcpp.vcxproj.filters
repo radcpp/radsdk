@@ -343,13 +343,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="VulkanEngine\Shaders\SolidWireframe.frag">
       <Filter>VulkanEngine\Shaders</Filter>
     </None>
     <None Include="VulkanEngine\Shaders\SolidWireframe.vert">
       <Filter>VulkanEngine\Shaders</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\3rdparty\include\imgui\LICENSE.txt">

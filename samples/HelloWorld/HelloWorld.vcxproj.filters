@@ -6,11 +6,11 @@
     <ClCompile Include="CameraController.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="WindowTest.h" />
     <ClInclude Include="HelloWorld.h" />
     <ClInclude Include="CameraController.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
