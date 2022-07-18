@@ -96,7 +96,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\lib\$(PlatformShortName)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;Qt6Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;OpenCL.lib;Qt6Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d  "$(SolutionDir)3rdparty\bin\$(PlatformShortName)\*.dll" "$(OutDir)"
@@ -121,7 +121,7 @@ xcopy /y /d /e  "$(SolutionDir)VulkanEngine\Shaders\" "$(OutDir)"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\lib\$(PlatformShortName)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;Qt6Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;OpenCL.lib;Qt6Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d  "$(SolutionDir)3rdparty\bin\$(PlatformShortName)\*.dll" "$(OutDir)"
@@ -142,7 +142,7 @@ xcopy /y /d /e  "$(SolutionDir)VulkanEngine\Shaders\" "$(OutDir)"</Command>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\lib\$(PlatformShortName)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;Qt6Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;OpenCL.lib;Qt6Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d  "$(SolutionDir)3rdparty\bin\$(PlatformShortName)\*.dll" "$(OutDir)"
@@ -167,7 +167,7 @@ xcopy /y /d /e  "$(SolutionDir)radcpp\VulkanEngine\Shaders\" "$(OutDir)Shaders\"
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\lib\$(PlatformShortName)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;Qt6Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>radcpp.lib;SDL2.lib;SDL2main.lib;shaderc_shared.lib;assimp-vc142-mt.lib;CMP_Core_MT_DLL.lib;CMP_Framework_MT_DLL.lib;Compressonator_MT_DLL.lib;OpenCL.lib;Qt6Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d  "$(SolutionDir)3rdparty\bin\$(PlatformShortName)\*.dll" "$(OutDir)"

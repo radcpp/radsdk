@@ -22,6 +22,9 @@
     <Filter Include="VulkanEngine\imgui">
       <UniqueIdentifier>{bc743ae9-6116-4c3c-ad3e-5f4afa805952}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OpenCompute">
+      <UniqueIdentifier>{1f4978e4-47ac-445e-b2a0-1c9551d2988e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\Common.cpp">
@@ -158,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="VulkanEngine\VulkanUi.cpp">
       <Filter>VulkanEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenCompute\OpenCompute.cpp">
+      <Filter>OpenCompute</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +337,9 @@
     </ClInclude>
     <ClInclude Include="VulkanEngine\VulkanUi.h">
       <Filter>VulkanEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenCompute\OpenCompute.h">
+      <Filter>OpenCompute</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -167,6 +167,7 @@
     <ClCompile Include="Common\Math.cpp" />
     <ClCompile Include="Common\NativeFileDialog.cpp" />
     <ClCompile Include="Common\String.cpp" />
+    <ClCompile Include="OpenCompute\OpenCompute.cpp" />
     <ClCompile Include="VulkanEngine\VulkanCamera.cpp" />
     <ClCompile Include="VulkanEngine\VulkanCore\VulkanBuffer.cpp" />
     <ClCompile Include="VulkanEngine\VulkanCore\VulkanCommandBuffer.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="Common\Process.h" />
     <ClInclude Include="Common\SmallVector.h" />
     <ClInclude Include="Common\String.h" />
+    <ClInclude Include="OpenCompute\OpenCompute.h" />
     <ClInclude Include="VulkanEngine\Shaders\Hash.h" />
     <ClInclude Include="VulkanEngine\Shaders\Render.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
