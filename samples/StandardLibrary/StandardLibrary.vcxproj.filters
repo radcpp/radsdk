@@ -32,10 +32,16 @@
     <ClCompile Include="concurrency\thread1.cpp">
       <Filter>concurrency</Filter>
     </ClCompile>
+    <ClCompile Include="compute\Boost-Compute.cpp">
+      <Filter>compute</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="concurrency">
       <UniqueIdentifier>{c687c088-cefe-40b6-bd50-daeff40ad3e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compute">
+      <UniqueIdentifier>{fb916e89-9a56-4dcb-8592-9bbc66e3d3ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,11 @@ int sample_condvar2();
 // Using Atomics
 int sample_atomics1();
 
+// Boost.Compute: https://www.boost.org/doc/libs/1_79_0/libs/compute/doc/html/index.html
+int sample_Boost_Compute_HelloWorld();
+int sample_Boost_Compute_TransferringData();
+int sample_Boost_Compute_TransformingData();
+
 int main()
 {
     //return sample_async1();
@@ -31,4 +36,8 @@ int main()
     //return sample_condvar1();
     //return sample_condvar2();
     //return sample_atomics1();
+
+    //return sample_Boost_Compute_HelloWorld();
+    //return sample_Boost_Compute_TransferringData();
+    //return sample_Boost_Compute_TransformingData();
 }
